@@ -1,6 +1,5 @@
 package com.soyvideojuegos.app.playlist;
 
-import android.annotation.SuppressLint;
 import android.app.ListActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -12,11 +11,12 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.Toast;
-
+import com.google.analytics.tracking.android.EasyTracker;
+import com.google.analytics.tracking.android.MapBuilder;
+import com.google.analytics.tracking.android.Fields;
 import com.soyvideojuegos.app.R;
 import com.soyvideojuegos.app.YouTubeURL;
 import com.soyvideojuegos.app.videolist.VideoListJSON;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,12 +41,17 @@ public class PlayListActivity extends ListActivity implements PlayListListener,
         super.onCreate(savedInstanceState);
         setContentView(R.layout.playlists);
 
+        String name = "PlayListActivity";
+        EasyTracker tracker = EasyTracker.getInstance(this);
+        tracker.set(Fields.SCREEN_NAME, name);
+        tracker.send(MapBuilder.createAppView().build());
+
         this.listView = getListView();
         this.listView.setOnScrollListener(this);
         this.listView.setOnItemClickListener(this);
 
         footer = getLayoutInflater().inflate(R.layout.loading, null);
-//        this.listView.addFooterView(footer);
+        this.listView.addFooterView(footer);
         this.listView.setFooterDividersEnabled(true);
 
         this.items = new ArrayList<PlayList>();
@@ -156,9 +161,34 @@ public class PlayListActivity extends ListActivity implements PlayListListener,
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+        PlayList playList = items.get(position);
+
+        String category = "PlayList";
+        String action = "OnClick";
+        String label = playList.getTitle();
+        Long value = 0l;
+
+        EasyTracker tracker = EasyTracker.getInstance(this);
+        tracker.send(MapBuilder
+                    .createEvent(category, action, label, value)
+                    .build()
+        );
+
         Intent intent = new Intent(this, com.soyvideojuegos.app.videolist.VideoListActivity.class);
-        intent.putExtra(VideoListJSON.PLAYLISTID, items.get(position).getPlayListId());
+        intent.putExtra(VideoListJSON.PLAYLISTID, playList.getPlayListId());
         startActivity(intent);
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        EasyTracker.getInstance(this).activityStart(this);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        EasyTracker.getInstance(this).activityStop(this);
+    }
 }
