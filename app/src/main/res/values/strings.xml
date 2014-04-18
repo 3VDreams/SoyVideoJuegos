@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">SoyVideoJuegos</string>
+    <string name="action_settings">Settings</string>
+    
+	<string name="fullscreen_button">Launch Full Screen</string>    
+	<string name="playlist_button">Launch Playlist</string>	
+	<string name="playlists_button">Launch Playlists</string> 
+	<string name="videoitem_button">Launch VideoItem</string> 
+	<string name="videofull_button">Launch FullScreen</string> 	
+	
+	<string name="playlist_empty">No hay Playlists</string> 
+	
+	<string name="loading">Cargando &#8230;</string> 
+	<string name="tittle">Videoguia XXXXXXXXXX en Espanol [1080p]</string> 
+	<string name="position">1</string> 
+	<string name="publishedAt">2013#8211;07#8211;16T03:05:31.000Z</string> 
+	
+</resources>
