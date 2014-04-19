@@ -1,13 +1,15 @@
 package com.soyvideojuegos.app.videolist;
 
 import android.content.Intent;
+import android.os.Parcel;
+import android.os.Parcelable;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-public class VideoList {
+public class VideoList implements Parcelable{
 
     private String videoItemId;
     private String title;
@@ -112,7 +114,6 @@ public class VideoList {
         } catch (ParseException ex) {
         }
 
-
     }
 
     public String getPublishedAt(Locale locale) {
@@ -120,6 +121,13 @@ public class VideoList {
         SimpleDateFormat formatOut = new SimpleDateFormat("EEEE, d MMM yyyy HH:mm:ss", locale);
         return formatOut.format(publishedAt);
     }
+
+    public String getPublishedAtTimeZone() {
+
+        SimpleDateFormat formatOut = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", new Locale("CO"));
+        return formatOut.format(publishedAt);
+    }
+
 
     public String getThumbnails() {
         return thumbnails;
@@ -152,4 +160,42 @@ public class VideoList {
     public void setPlayListId(String playListId) {
         this.playListId = playListId;
     }
+
+    private VideoList(Parcel in) {
+        setVideoItemId(in.readString());
+        setTitle(in.readString());
+        setDescription(in.readString());
+        setPublishedAt(in.readString());
+        setThumbnails(in.readString());
+        setPosicion(in.readInt());
+        setPlayListId(in.readString());
+        setVideoId(in.readString());
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(getVideoItemId());
+        dest.writeString(getTitle());
+        dest.writeString(getDescription());
+        dest.writeString(getPublishedAtTimeZone());
+        dest.writeString(getThumbnails());
+        dest.writeInt(getPosicion());
+        dest.writeString(getPlayListId());
+        dest.writeString(getVideoId());
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public static final Parcelable.Creator<VideoList> CREATOR = new Parcelable.Creator<VideoList>() {
+        public VideoList createFromParcel(Parcel in) {
+            return new VideoList(in);
+        }
+
+        public VideoList[] newArray(int size) {
+            return new VideoList[size];
+        }
+    };
 }
