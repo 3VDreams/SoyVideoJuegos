@@ -6,6 +6,6 @@
     <bool name="ga_reportUncaughtExceptions">true</bool>
 
     <!-- Prevent data from appearing in reports. Useful for testing. -->
-    <bool name="ga_dryRun">false</bool>
+    <bool name="ga_dryRun">true</bool>
 
 </resources>
