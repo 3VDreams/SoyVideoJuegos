@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\home\cristian\android-sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="C:\home\cristian\workspace_studio\SoyVideoJuegos\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-bcfbc89d2e530318f975ecfc4acd4cf58b84cd20.jar" />
+    </item>
+    <item
+        jar="C:\home\cristian\workspace_studio\SoyVideoJuegos\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="C:\home\cristian\workspace_studio\SoyVideoJuegos\app\build\intermediates\pre-dexed\debug\classes-cfe0b10f0a43be3896d5718517e1bc51babda35e.jar" />
+    </item>
+    <item
+        jar="C:\home\cristian\workspace_studio\SoyVideoJuegos\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="C:\home\cristian\workspace_studio\SoyVideoJuegos\app\build\intermediates\pre-dexed\debug\classes-dda5ae1ffd65d4a9a3ae6a504131b72152c305ec.jar" />
+    </item>
+    <item
+        jar="C:\home\cristian\workspace_studio\SoyVideoJuegos\app\libs\libGoogleAnalyticsServices.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="db1e65d9e3ee616f871cb23120fbea8f18ad3e4c">
+        <dex dex="C:\home\cristian\workspace_studio\SoyVideoJuegos\app\build\intermediates\pre-dexed\debug\libGoogleAnalyticsServices-3f27febb00d853573472a7a7c39c879c4f0a51a0.jar" />
+    </item>
+    <item
+        jar="C:\home\cristian\workspace_studio\SoyVideoJuegos\app\libs\YouTubeAndroidPlayerApi.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="29ccfbddf99584bddbaab62c0cf50dcd1c564e43">
+        <dex dex="C:\home\cristian\workspace_studio\SoyVideoJuegos\app\build\intermediates\pre-dexed\debug\YouTubeAndroidPlayerApi-d8d1bc884d0908e6433fa32457679f9f31763c84.jar" />
+    </item>
+    <item
+        jar="C:\home\cristian\workspace_studio\SoyVideoJuegos\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\libs\internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="C:\home\cristian\workspace_studio\SoyVideoJuegos\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-7b93bea1e4ddbc1c6a6b03483d0f5855438f349b.jar" />
+    </item>
+
+</items>
